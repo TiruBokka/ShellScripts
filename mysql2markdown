@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# Prints the table/view struction information as a Markdown table
+# Usage: mysql2markdown table_or_view_name
+#
+# Author: Tiru Bokka <tbokka@tirubokka.com>
+# Last modified: 2018-05-13
+#
+SCRIPT_NAME=`basename $0`
+
+if [ $# -ne 1 ]; then
+  echo "$SCRIPT_NAME: Error: database object name not specified." > /dev/stderr
+  echo "Usage: $SCRIPT_NAME table_or_view_name" > /dev/stderr
+  echo "Edit the script to change the database name, user name, and password" > /dev/stderr
+  exit 1
+fi
+
+DB_USER="root"
+DB_PASSWORD="password"
+DB_NAME="tysql"
+OBJECT_NAME="$1"
+
+echo "|Field | Type | Null | Key | Default | Extra|"
+echo "|-|-|-|-|-|-|"
+mysql -u$DB_USER -p$DB_PASSWORD $DB_NAME -e "DESCRIBE $OBJECT_NAME" 2> /dev/null |\
+tail -n +2 | sed -e 's/	/ | /g' -e 's/^/| /' -e 's/$/ |/'

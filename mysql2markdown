@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Prints the table/view struction information as a Markdown table
+# Prints the table (or view) structure as a Markdown table
 # Usage: mysql2markdown table_or_view_name
 #
 # Author: Tiru Bokka <tbokka@tirubokka.com>

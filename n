@@ -1,5 +1,5 @@
 REPO=$HOME/repos/Notes
-NOTE_FOLDER=`date '+%Y/%m/%d'`
+NOTE_FOLDER=`TZ='Asia/Kolkata' date '+%Y/%m/%d'`
 mkdir -p $NOTE_FOLDER
-NOTE_FILE=`date '+%H%M%S'`
+NOTE_FILE=`TZ='Asia/Kolkata' date '+%H%M%S'`
 vi $NOTE_FOLDER/$NOTE_FILE

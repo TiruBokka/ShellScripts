@@ -1,0 +1,5 @@
+REPO=$HOME/repos/Notes
+NOTE_FOLDER=`date '+%Y/%m/%d'`
+mkdir -p $NOTE_FOLDER
+NOTE_FILE=`date '+%H%M%S'`
+vi $NOTE_FOLDER/$NOTE_FILE

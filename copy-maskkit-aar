@@ -1,0 +1,2 @@
+#cp /Users/tb/repos/maskkit/lib/build/outputs/aar/lib-debug.aar /Users/tb/repos/SpoorsMLKit.aar
+cp /Users/tb/repos/maskkit/lib/build/outputs/aar/lib-release.aar /Users/tb/repos/SpoorsMLKit.aar
